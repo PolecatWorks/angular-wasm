@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Life</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            Width: {{ width }}
+        </p>
+        <p>
+            Height: {{ height }}
+        </p>
+
+        <mat-slide-toggle [(ngModel)]="isPaused">Pause</mat-slide-toggle>
+        <p></p>
+<!-- <pre #mypre>{{myPreText}}</pre> -->
+<svg version="1.1"
+     [attr.width]="border + cell*width + border" [attr.height]="border + cell*height + border"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <g #cells [attr.transform]='"translate(" + border +" " +border +")"'>
+        <g *ngFor="let myrow of cellsAsRows; let row_i = index" [attr.transform]='"translate(" + 0 +" " + cell*row_i +")"'>
+            <g *ngFor="let mycell of myrow; let col_i = index" [attr.transform]='"translate(" + cell*col_i +" " + 0 +")"'>
+                <rect x="00" y="0" [attr.width]="cell" [attr.height]="cell" [class.alive]="mycell == 1" />
+            </g>
+        </g>
+
+    
+        
+    </g>
+
+
+        <!-- <g *ngFor="let myrow of [].constructor(height); let row = index" [attr.transform]='"translate(" + 0 +" " + cell*row +")"'>
+            <g *ngFor="let mycol of [].constructor(width); let col = index" [attr.transform]='"translate(" + cell*col +" " + 0 +")"'>
+                <rect x="00" y="0" [attr.width]="cell" [attr.height]="cell" [class.alive]="true" />
+            </g>
+        </g> -->
+</svg>
+
+</mat-card-content>
+
+</mat-card>
