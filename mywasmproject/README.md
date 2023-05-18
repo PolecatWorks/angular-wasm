@@ -1,3 +1,13 @@
+# Starting with WASM
+
+
+Before you start you need to install wasm-pack (https://rustwasm.github.io/wasm-pack/installer/)
+
+    curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
+
+
+
 <div align="center">
 
   <h1><code>wasm-pack-template</code></h1>
